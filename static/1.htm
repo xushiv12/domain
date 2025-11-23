@@ -1,0 +1,124 @@
+<link href="https://www.runoob.com/images/pic_bulbon.gif" rel="icon">
+<title>挣钱、买票、与乘车的页面</title>
+<style>
+.a{
+	background-color:blue;
+	width:100%;
+	height:1000%;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	}
+#com{
+	width:100%;
+	height:100%;
+	top:900%;
+	left:0;
+	bottom:0;
+	background-color:red;
+	position:absolute;
+	}
+h1,h2,h3{
+	color:lime;
+	}
+a{
+	color:yellow;
+	background-color:red;
+	}
+button{
+	width:300px;
+	height:200px;
+	background-color:lime;
+	color:white;
+	}
+iframe{
+	width:500px;
+	height:400px;
+	display:none;
+	}
+</style>
+<div class="a">
+	<h1 id="a">挣积分票&现在的积分票数:0</h1>
+	<a href="#com">去看介绍</a><br>
+	<h2>挣钱</h2>
+	<p>请按下面的按钮(注意：此按钮只生效一次)：</p><br>
+	<button onclick="document.getElementById('a').textContent='挣积分票&现在的积分票数:100000';">得到100000积分票</button>
+	<h2>买票</h2>
+	<h3 id="b">票数:0</h3>
+	<button onclick="A()">买单人票(100)</button><br>
+	<button onclick="B()">买双人票(200)</button><br>
+	<button onclick="C()">买小孩票(50)</button><br>
+	<button onclick="D()">买0岁以下小宝宝票(免费)</button>
+	<h2>坐车</h2>
+	<p>请在这里:</p>
+	<button onclick="E()" id="display">乘坐</button><br>
+	<iframe src="/bus?url=xushi.x" id="iframe"></iframe>
+</div>
+<div id="com">
+	<h2>介绍</h2>
+	<p>此页面是用来进行“走马观花”的——你可以“乘坐”“超级无敌虚拟域名‘摆渡’车”来游览我们这儿的知名网页。</p>
+</div>
+<script>
+let 票数=0;
+function A(){
+	let a=document.getElementById('a').textContent;
+	let b=a.split(":")[1];
+	let c="";
+	if(b!="0"){
+		c=Number(b)-100;
+		票数++;
+		document.getElementById('b').textContent="票数:"+票数;
+	    document.getElementById('a').textContent="挣积分票&现在的积分票数:"+c;
+	}else{
+		alert("你的钱还不够");
+	}
+}
+function B(){
+	let a=document.getElementById('a').textContent;
+	let b=a.split(":")[1];
+	let c="";
+	if(b!="0"){
+		c=Number(b)-200;
+		票数++;
+		document.getElementById('b').textContent="票数:"+票数;
+	    document.getElementById('a').textContent="挣积分票&现在的积分票数:"+c;
+	}else{
+		alert("你的钱还不够");
+	}
+}
+function C(){
+	let a=document.getElementById('a').textContent;
+	let b=a.split(":")[1];
+	let c="";
+	if(b!="0"){
+		c=Number(b)-50;
+		票数++;
+		document.getElementById('b').textContent="票数:"+票数;
+	    document.getElementById('a').textContent="挣积分票&现在的积分票数:"+c;
+	}else{
+		alert("你的钱还不够");
+	}
+}
+function D(){
+	let a=document.getElementById('a').textContent;
+	let b=a.split(":")[1];
+	let c="";
+	c=Number(b);
+	票数++;
+	document.getElementById('b').textContent="票数:"+票数;
+	document.getElementById('a').textContent="挣积分票&现在的积分票数:"+c;
+}
+function E(){
+	let a=票数;
+	if(票数===0){
+		alert("票数不够");
+	}else{
+		document.getElementById('b').textContent="票数:"+票数-1;
+		document.getElementById('iframe').style.display="block";
+		document.getElementById('display').style.display="none";
+		票数=a-1;
+	}
+}
+</script>

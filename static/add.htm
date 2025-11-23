@@ -1,0 +1,20 @@
+<div style="width:100%;height:20%;background-color:red;left:0;top:0;position:absolute;">
+<h1><a href="/">回到主页面</a>|请填写下面的表单(你刚注册的域名,记录类型,记录值):</h1>
+</div>
+<form action="/add/go" method="post" id="b">
+<input name="b" id="a" style="width:100%;height:20%;background-color:lime;left:0;top:20%;position:absolute;"><br>
+<input name="c" style="width:100%;height:20%;background-color:lime;left:0;top:40%;position:absolute;"><br>
+<input name="d" style="width:100%;height:20%;background-color:lime;left:0;top:60%;position:absolute;"><br>
+</form>
+<input type="submit" value="提交" onclick="A()" style="width:100%;height:20%;background-color:blue;color:yellow;left:0;bottom:0;position:absolute;">
+<script>
+function A(){
+	let a=localStorage.getItem("a");
+	let b=document.getElementById("a").value;
+	if(b===a){
+		document.getElementById("b").submit();
+	}else{
+		alert("你不可以添加记录给这个不属于你的域名!");
+	}
+}
+</script>

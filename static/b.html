@@ -1,0 +1,38 @@
+
+<button onclick="A()" style="width:25%;height:10%;left:0;top:0;position:absolute;background-color:lime;color:blue;">点击运行</button><button onclick="B()" style="width:25%;height:10%;left:25%;top:0;right:50%;position:absolute;background-color:lime;color:blue;">显示源码</button>
+<textarea id="a" style="width:50%;height:80%;left:0;top:10%;bottom:10%;position:absolute;">
+<h1>b</h1>
+<h2>b</h2>
+<h3>b</h3>
+<h4>b</h4>
+<h5>b</h5>
+<h6>b</h6>
+<p>b</p>
+</textarea>
+<button style="width:50%;height:10%;left:0;top:90%;bottom:0;position:absolute;background-color:lime;color:blue;"><a href="/">回到主页面</a></button>
+<iframe id="b" style="width:50%;height:100%;right:0;bottom:0;position:absolute;" srcdoc="<h1>b</h1>
+<h2>b</h2>
+<h3>b</h3>
+<h4>b</h4>
+<h5>b</h5>
+<h6>b</h6>
+<p>b</p>"></iframe>
+<script>
+function A(){
+	let a=document.getElementById("a").value;
+	document.getElementById("b").srcdoc=a;
+}
+function B(){
+	let a=`<h1>b</h1>
+<h2>b</h2>
+<h3>b</h3>
+<h4>b</h4>
+<h5>b</h5>
+<h6>b</h6>
+<p>b</p>
+
+   `;
+	document.getElementById("a").value=a;
+	document.getElementById("b").srcdoc=a;
+}
+</script>

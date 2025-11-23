@@ -1,0 +1,13 @@
+
+请输入.x.cn域名(带https://或者http://):<input id="a">在这里输入路径(如果没有路径请在此输入/):<input id="b"><button onclick="A()">访问</button>
+<iframe id="c" width="100%" height="200%"></iframe><br>
+<script>
+function A(){
+	let a=document.getElementById("a").value;
+	let b=document.getElementById("b").value;
+	let c=a+".24782bus.xyz";
+    document.getElementById("c").src=c+b;
+	document.getElementById("d").innerHTML=c+b;
+}
+</script>
+你的公网访问链接是:<p id="d"></p>
